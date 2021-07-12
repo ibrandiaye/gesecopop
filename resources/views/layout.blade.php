@@ -320,21 +320,9 @@
 
                         <div class="container-fluid">
 
-                            <div class="row">
-                               {{--  <div class="col-sm-12">
-                                    <div class="page-title-box">
-                                        <div class="btn-group float-right">
-                                            <ol class="breadcrumb hide-phone p-0 m-0">
-                                                <li class="breadcrumb-item"><a href="#">Zoter</a></li>
-                                                <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                                                <li class="breadcrumb-item active">Starter</li>
-                                            </ol>
-                                        </div>
-                                        <h4 class="page-title">Starter</h4>
-                                    </div>
-                                </div> --}}
+
                                 @yield('content')
-                                <div class="clearfix"></div>
+
                             </div>
                             <!-- end page title end breadcrumb -->
 
@@ -366,7 +354,7 @@
         <script src="{{ asset('assets/js/jquery.blockUI.js') }}"></script>
         <script src="{{ asset('assets/js/waves.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
-
+        @yield('script')
         <!-- App js -->
         <script src="{{ asset('assets/js/app.js') }}"></script>
 
