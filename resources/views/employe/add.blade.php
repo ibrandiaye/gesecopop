@@ -40,28 +40,20 @@
 
                 <form class="" action="{{ route('employe.store') }}" method="POST">
                     @csrf
+                    ','telephone','sexe','datenaiss','dateentre','findecontrat',
+        'sm','nbenfant','statut','etude','salaire','lien','projet_id'
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Prenom</label>
-                        <input type="text" name="prenom" class="form-control" required placeholder="Type something"/>
+                        <input type="text" name="prenom" value="{{ old('prenom') }}" class="form-control" required placeholder="Type something"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Nom</label>
-                        <input type="text" name="nom" class="form-control" required placeholder="Type something"/>
-                    </div>
+                        <input type="text" name="nom" class="form-control" required placeholder="Type something"/>                   </div>
                     <div class="form-group mb-0">
-                        <label class="my-2 py-1">Equal To</label>
-                        <div>
-                            <input type="password" id="pass2" class="form-control" required
-                                    placeholder="Password"/>
-                        </div>
-                        <div class="m-t-10">
-                            <input type="password" class="form-control" required
-                                    data-parsley-equalto="#pass2"
-                                    placeholder="Re-Type Password"/>
-                        </div>
+                        <label class="mb-2 pb-1">Telephone</label>
+                        <input type="text" name="telephone" class="form-control" required placeholder="Type something"/>
                     </div>
-
-                    <div class="form-group mb-0">
+                    <div>
                         <label class="my-2 py-1">E-Mail</label>
                         <div>
                             <input type="email" class="form-control" required

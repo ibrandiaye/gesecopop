@@ -14,7 +14,7 @@
             <div class="btn-group float-right">
                 <ol class="breadcrumb hide-phone p-0 m-0">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('projet.index ') }}">Projet</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('projet.index') }}">Projet</a></li>
                     <li class="breadcrumb-item active">Enregistrer Projet</li>
                 </ol>
             </div>
@@ -40,7 +40,7 @@
 
             {!! Form::model($projet, ['method'=>'PATCH','route'=>['projet.update', $projet->id]]) !!}
             @csrf
-                    @csrf
+                    
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Nom projet</label>
                         <input type="text" class="form-control" name="nomp" value="{{ $projet->nomp }}" required placeholder="Type something"/>
