@@ -65,11 +65,7 @@ class ProjetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $projet = $this->projetRepository->getById($id);
-        return view('projet.edit',compact('projet'));
-    }
+
 
     /**
      * Update the specified resource in storage.

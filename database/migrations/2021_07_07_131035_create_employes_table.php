@@ -23,9 +23,9 @@ class CreateEmployesTable extends Migration
             $table->string('sexe');
             $table->string('datenaiss');
             $table->date('dateentre');
-            $table->date('findecontrat');
+            $table->date('findecontrat')->nullabke();
             $table->string('sm');
-            $table->string('nbenfant');
+            $table->string('nbenfant')->nullable();
             $table->string('statut');
             $table->integer('etude');
             $table->double('salaire');
