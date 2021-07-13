@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('projet', 'ProjetController');
+Route::resource('employe', 'EmployeController');
+Route::resource('contrat', 'ContratController');

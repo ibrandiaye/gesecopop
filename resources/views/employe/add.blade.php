@@ -40,61 +40,81 @@
 
                 <form class="" action="{{ route('employe.store') }}" method="POST">
                     @csrf
-                    ','telephone','sexe','datenaiss','dateentre','findecontrat',
-        'sm','nbenfant','statut','etude','salaire','lien','projet_id'
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Prenom</label>
-                        <input type="text" name="prenom" value="{{ old('prenom') }}" class="form-control" required placeholder="Type something"/>
+                        <input type="text" name="prenom" value="{{ old('prenom') }}" class="form-control" required placeholder="Saisir votre Prenom"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Nom</label>
-                        <input type="text" name="nom" class="form-control" required placeholder="Type something"/>                   </div>
+                        <input type="text" name="nom" class="form-control"  value="{{ old('nom') }}"  required placeholder="Saisir votre Nom"/>
+                      </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Telephone</label>
-                        <input type="text" name="telephone" class="form-control" required placeholder="Type something"/>
+                        <input type="text" name="telephone" ata-parsley-type="number" value="{{ ('telephone') }}"  class="form-control"   required placeholder="Saisir votre Téléphone"/>
                     </div>
-                    <div>
-                        <label class="my-2 py-1">E-Mail</label>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Sexe</label>
+
+                            <select class="custom-select" name="sexe" required>
+                                <option value="" selected>Selectionner</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Date Naissance</label>
+                        <input type="date" name="datenaiss" value="{{ old('datenaiss') }}"   class="form-control"  required placeholder="Saisir date de Naissance"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Date d'Entrée</label>
+                        <input type="date" name="dateentre" value="{{ old('dateentre') }}"   class="form-control"   required placeholder="Saisir  date d'entrée"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Date de fin de contrat</label>
+                        <input type="date" name="findecontrat" value="{{ old('findecontrat') }}"   class="form-control"  required placeholder="Saisir date fin de contrat "/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Situation matrimonial</label>
+                        <input type="text" name="sm" value="{{ old('sm') }}"   class="form-control"  required placeholder="Saisir Situation matrimoniale"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Nombre d'enfant</label>
+                        <input type="text" name="nbenfant" ata-parsley-type="number" value="{{ ('nbenfant') }}"  class="form-control"   required placeholder="Saisir nombre d'enfant"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Statut</label>
+
+                            <select class="custom-select" name="statut" required>
+                                <option selected>Selectionner</option>
+                                <option value="Stage">Stage</option>
+                                <option value="CDD">CDD</option>
+                                <option value="CDI">CDI</option>
+                            </select>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Niveau d'étude</label>
+                        <input type="text" name="etude" ata-parsley-type="number" value="{{ ('etude') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Salaire</label>
+                        <input type="text" name="salaire" ata-parsley-type="number" value="{{ ('salaire') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="my-2 py-1">Lien du dossier du candidat</label>
                         <div>
-                            <input type="email" class="form-control" required
-                                    parsley-type="email" placeholder="Enter a valid e-mail"/>
+                            <input parsley-type="url" type="lien" class="form-control" value="{{ old('lien') }}"
+                                 name="lien"   required placeholder="Saisir le lien du dossier du candidat"/>
                         </div>
                     </div>
                     <div class="form-group mb-0">
-                        <label class="my-2 py-1">URL</label>
+                        <label class="my-2 py-1">Lien du dossier du candidat</label>
                         <div>
-                            <input parsley-type="url" type="url" class="form-control"
-                                    required placeholder="URL"/>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0">
-                        <label class="my-2 py-1">Digits</label>
-                        <div>
-                            <input data-parsley-type="digits" type="text"
-                                    class="form-control" required
-                                    placeholder="Enter only digits"/>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0">
-                        <label>Number</label>
-                        <div>
-                            <input data-parsley-type="number" type="text"
-                                    class="form-control" required
-                                    placeholder="Enter only numbers"/>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0">
-                        <label class="my-2 py-1">Alphanumeric</label>
-                        <div>
-                            <input data-parsley-type="alphanum" type="text"
-                                    class="form-control" required
-                                    placeholder="Enter alphanumeric value"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="my-2 py-1">Textarea</label>
-                        <div>
-                            <textarea required class="form-control" rows="5"></textarea>
+                            <select class="custom-select" name="projet_id" required>
+                                <option selected>Selectionner</option>
+                            @foreach ($projets as $projet )
+                            <option value="{{ $projet->id }}">{{ $projet->nomp }}</option>
+                            @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-group mb-0">
