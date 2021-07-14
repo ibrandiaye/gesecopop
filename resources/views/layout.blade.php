@@ -63,14 +63,14 @@
                                 </ul>
                             </li>
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Employe </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-box"></i> <span> Employe </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('employe.create') }}">Ajouter</a></li>
                                     <li><a href="{{ route('employe.index') }}"">Lister</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Contrat </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-book-open"></i> <span> Contrat </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('contrat.create') }}">Ajouter</a></li>
                                     <li><a href="{{ route('contrat.index') }}"">Lister</a></li>
