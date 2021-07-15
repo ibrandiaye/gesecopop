@@ -40,7 +40,7 @@
 
             {!! Form::model($projet, ['method'=>'PATCH','route'=>['projet.update', $projet->id]]) !!}
             @csrf
-                    
+
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Nom projet</label>
                         <input type="text" class="form-control" name="nomp" value="{{ $projet->nomp }}" required placeholder="Type something"/>
@@ -65,7 +65,7 @@
 @endsection
 @section('script')
 <script src="{{ asset('assets/plugins/parsleyjs/parsley.min.js') }}"></script>
-
+<script src="{{ asset('assets/js/fr.js') }}"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $('form').parsley();

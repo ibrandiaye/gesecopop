@@ -135,7 +135,7 @@
 @endsection
 @section('script')
 <script src="{{ asset('assets/plugins/parsleyjs/parsley.min.js') }}"></script>
-
+<script src="{{ asset('assets/js/fr.js') }}"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $('form').parsley();

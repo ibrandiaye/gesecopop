@@ -50,7 +50,7 @@
                       </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Telephone</label>
-                        <input type="text" name="telephone" ata-parsley-type="number" value="{{ ('telephone') }}"  class="form-control"   required placeholder="Saisir votre Téléphone"/>
+                        <input type="text" name="telephone" ata-parsley-type="number" value="{{ old('telephone') }}"  class="form-control"   required placeholder="Saisir votre Téléphone"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Sexe</label>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Nombre d'enfant</label>
-                        <input type="text" name="nbenfant" ata-parsley-type="number" value="{{ ('nbenfant') }}"  class="form-control"   required placeholder="Saisir nombre d'enfant"/>
+                        <input type="number" name="nbenfant" ata-parsley-type="number" value="{{ old('nbenfant') }}"  class="form-control"   required placeholder="Saisir nombre d'enfant"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Statut</label>
@@ -93,11 +93,11 @@
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Niveau d'étude</label>
-                        <input type="text" name="etude" ata-parsley-type="number" value="{{ ('etude') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
+                        <input type="number" name="etude" ata-parsley-type="number" value="{{ old('etude') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Salaire</label>
-                        <input type="text" name="salaire" ata-parsley-type="number" value="{{ ('salaire') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
+                        <input type="text" name="salaire" ata-parsley-type="number" value="{{ old('salaire') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="my-2 py-1">Lien du dossier du candidat</label>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-0">
-                        <label class="my-2 py-1">Lien du dossier du candidat</label>
+                        <label class="my-2 py-1">Projet</label>
                         <div>
                             <select class="custom-select" name="projet_id" required>
                                 <option selected>Selectionner</option>
@@ -136,7 +136,7 @@
 @endsection
 @section('script')
 <script src="{{ asset('assets/plugins/parsleyjs/parsley.min.js') }}"></script>
-
+<script src="{{ asset('assets/js/fr.js') }}"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $('form').parsley();
