@@ -28,7 +28,7 @@
                 <div class="card-body">
 
                     <div class="text-center">
-                        <a href="index.html" class="logo logo-admin"><img src="assets/images/e-logo.png" height="20" alt="logo"></a>
+                        <a href="index.html" class="logo logo-admin"><img src="assets/images/logo.png" height="20" alt="logo"></a>
                     </div>
 
                     <div class="p-3">
