@@ -23,7 +23,7 @@ class EmployeController extends Controller
      */
     public function index()
     {
-        $employes = $this->employeRepository->getAll();
+        $employes = $this->employeRepository->getEmployeWithRelation();
         return view('employe.index',compact('employes'));
     }
 
