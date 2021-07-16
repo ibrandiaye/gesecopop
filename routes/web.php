@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
-Route::resource('projet', 'ProjetController');
-Route::resource('employe', 'EmployeController');
-Route::resource('contrat', 'ContratController');
+}); */
+Route::resource('projet', 'ProjetController')->middleware('auth');
+Route::resource('employe', 'EmployeController')->middleware('auth');
+Route::resource('contrat', 'ContratController')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
