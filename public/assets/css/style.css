@@ -34,8 +34,8 @@ File: Main Css File
 27. Calendar
 28. Widgets
 29. Maps
-30. Account pages 
-31. Responsive 
+30. Account pages
+31. Responsive
 */
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,500,600");
 /* ==============
@@ -3533,7 +3533,7 @@ label {
   Account Pages
 ===================*/
 .accountbg {
-  background: url("../images/bg-account.png");
+ /* background: url("../images/bg-account.png");*/
   background-repeat: repeat-x;
   position: absolute;
   height: 50%;
