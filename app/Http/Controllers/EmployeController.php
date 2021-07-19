@@ -30,6 +30,7 @@ class EmployeController extends Controller
             $date2 =date_create($employe->dateentre);
             $dif=date_diff($date1,$date2);
             $diff = $dif->format('%a')/365;
+            $employe->anciennete = floor($diff);
 
         }
         return view('employe.index',compact('employes','diff'));

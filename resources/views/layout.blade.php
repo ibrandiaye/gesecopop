@@ -49,7 +49,7 @@
                             <li class="menu-title">Main</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="{{ route('home') }}" class="waves-effect">
                                     <i class="mdi mdi-airplay"></i>
                                     <span> Tableau de bord <span class="badge badge-pill badge-primary float-right">7</span></span>
                                 </a>
@@ -199,7 +199,7 @@
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
                                         <div class="dropdown-item noti-title">
-                                            <h5>Welcome</h5>
+                                            <h5>Bienvenue</h5>
                                         </div>
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> {{ Auth::user()->name }}</a>
                                         {{-- <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My Wallet</a>
