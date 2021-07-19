@@ -1,3 +1,4 @@
+@extends('layout')
 @section('css')
 <!-- Plugins css -->
 <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />

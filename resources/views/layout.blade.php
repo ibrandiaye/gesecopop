@@ -56,7 +56,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Projet </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers     "></i> <span> Projet </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('projet.create') }}">Ajouter</a></li>
                                     <li><a href="{{ route('projet.index') }}"">Lister</a></li>
@@ -76,7 +76,12 @@
                                     <li><a href="{{ route('contrat.index') }}"">Lister</a></li>
                                 </ul>
                             </li>
-
+                            <li>
+                                <a href="{{ route('register') }}" class="waves-effect">
+                                    <i class="mdi mdi-account-multiple-plus"></i>
+                                    <span> Utilisateur </span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>
