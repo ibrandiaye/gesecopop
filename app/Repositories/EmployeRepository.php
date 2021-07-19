@@ -11,6 +11,9 @@ class EmployeRepository extends RessourceRepository{
     {
         $this->model = $employe;
     }
-    
+    public function getEmployeWithRelation(){
+        return Employe::with(['projet','contrats'])
+        ->get();
+    }
 
 }
