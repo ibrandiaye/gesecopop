@@ -64,7 +64,7 @@
                     <select class="custom-select" name="employe_id" required>
                         <option selected>Selectionner</option>
                     @foreach ($employes as $employe )
-                    <option value="{{ $employe->id }}" {{old('contrat_id', $employe->id) ==  ? 'selected' : ''}}>{{ $employe->prenom }} {{ $employe->nom }}</option>
+                    <option value="{{ $employe->id }}" {{old('employe_id', $employe->id) == $contrat->employe_id ? 'selected' : ''}}>{{ $employe->prenom }} {{ $employe->nom }}</option>
                     @endforeach
                     </select>
                 </div>
