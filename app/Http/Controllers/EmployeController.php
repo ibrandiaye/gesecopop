@@ -23,8 +23,7 @@ class EmployeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $employes = $this->employeRepository->getAll();
+        $employes = $this->employeRepository->getEmployeWithRelation();
         $diff=0;
         foreach ($employes as $employe) {
             $date1=date_create(date('Y-m-d'));
@@ -34,10 +33,6 @@ class EmployeController extends Controller
 
         }
         return view('employe.index',compact('employes','diff'));
-=======
-        $employes = $this->employeRepository->getEmployeWithRelation();
-        return view('employe.index',compact('employes'));
->>>>>>> origin
     }
 
     /**
