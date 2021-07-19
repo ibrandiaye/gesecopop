@@ -24,7 +24,15 @@ class EmployeController extends Controller
     public function index()
     {
         $employes = $this->employeRepository->getAll();
-        return view('employe.index',compact('employes'));
+        $diff=0;
+        foreach ($employes as $employe) {
+            $date1=date_create(date('Y-m-d'));
+            $date2 =date_create($employe->dateentre);
+            $dif=date_diff($date1,$date2);
+            $diff = $dif->format('%a')/365;
+
+        }
+        return view('employe.index',compact('employes','diff'));
     }
 
     /**
