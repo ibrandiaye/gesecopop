@@ -65,7 +65,7 @@
                                 <td>{{ $employe->salaire }}</td>
 
                                 <td><a href="{{ $employe->lien }}">Dossier</a> </td>
-                                <td>{{ $diff }}</td>
+                                <td>{{ $employe->anciennete }} ans</td>
                                 <td>  <a href="{{ route('employe.edit', $employe->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                     {!! Form::open(['method' => 'DELETE', 'route'=>['employe.destroy', $employe->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                     <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
