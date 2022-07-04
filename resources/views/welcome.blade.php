@@ -130,9 +130,9 @@
                                 <td>{{ $employe->prenom }}</td>
                                 <td>{{ $employe->nom }}</td>
                                 <td>{{ $employe->sexe }}</td>
-                                <td>{{ $employe->datenaiss }}</td>
-                                <td>{{ $employe->dateentre }}</td>
-                                <td>{{ $employe->findecontrat }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->datenaiss)->format('d-m-Y')   }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->dateentre)->format('d-m-Y') }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->findecontrat)->format('d-m-Y')   }}</td>
                                 <td>{{ $employe->sm }}</td>
                                 <td>{{ $employe->nbenfant }}</td>
                                 <td>{{ $employe->statut }}</td>

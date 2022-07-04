@@ -2,7 +2,7 @@
 @section('css')
 <!-- Plugins css -->
 <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('assets/plugins/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />@extends('layout')
+<link href="{{ asset('assets/plugins/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css') }}" rel="stylesheet" type="text/css" media="screen">
 @endsection
 @section('content')
@@ -56,9 +56,9 @@
                                 <td>{{ $employe->prenom }}</td>
                                 <td>{{ $employe->nom }}</td>
                                 <td>{{ $employe->sexe }}</td>
-                                <td>{{ $employe->datenaiss }}</td>
-                                <td>{{ $employe->dateentre }}</td>
-                                <td>{{ $employe->findecontrat }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->datenaiss)->format('d-m-Y')   }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->dateentre)->format('d-m-Y') }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->findecontrat)->format('d-m-Y')   }}</td>
                                 <td>{{ $employe->sm }}</td>
                                 <td>{{ $employe->nbenfant }}</td>
                                 <td>{{ $employe->statut }}</td>
@@ -66,8 +66,9 @@
                                 <td>{{ $employe->salaire }}</td>
 
                                 <td><a href="{{ $employe->lien }}">Dossier</a> </td>
-                                <td>{{ $employe->anciennete }} ans</td>
-                                <td>  <a href="{{ route('employe.edit', $employe->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <td>{{-- $employe->anciennete --}} ans</td>
+                                <td> <a href="{{ route('employe.show', $employe->id) }}" role="button" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                     <a href="{{ route('employe.edit', $employe->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                     {!! Form::open(['method' => 'DELETE', 'route'=>['employe.destroy', $employe->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                     <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                     {!! Form::close() !!}
@@ -91,7 +92,7 @@
 <script src="{{ asset('assets/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js') }}"></script>
         <script src="{{ asset('assets/pages/re-table.init.js') }}"></script>
 <script>
-    $(document).ready(function() {
+      $(document).ready(function() {
         $('#tech-companies-1').DataTable();
     } );
 </script>

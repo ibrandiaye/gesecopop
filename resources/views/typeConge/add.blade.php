@@ -14,11 +14,11 @@
             <div class="btn-group float-right">
                 <ol class="breadcrumb hide-phone p-0 m-0">
                    <i class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('projet.create') }}">Type congé</a></li>
-                    <li class="breadcrumb-item active">Enregistrer Type congé</li>
+                    <li class="breadcrumb-item"><a href="{{ route('type-conge.create') }}">Type de Congé</a></li>
+                    <li class="breadcrumb-item active">Enregistrer typeConge</li>
                 </ol>
             </div>
-            <h4 class="page-title">Enregistrer Type congé</h4>
+            <h4 class="page-title">Enregistrer type de congé</h4>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -38,11 +38,15 @@
             @endif
 
 
-                <form class="" action="{{ route('typeconge.store') }}" method="POST">
+                <form class="" action="{{ route('type-conge.store') }}" method="POST">
                     @csrf
                     <div class="form-group mb-0">
-                        <label class="mb-2 pb-1">Nom projet</label>
-                        <input type="text" class="form-control" name="nomp" value="{{ old('nomp') }}" required placeholder="Type something"/>
+                        <label class="mb-2 pb-1">Type congé</label>
+                        <input type="text" class="form-control" name="type" value="{{ old('type') }}" required placeholder="Type de congé"/>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Durée de congé</label>
+                        <input type="number" class="form-control" name="nbj" value="{{ old('nbj') }}" required placeholder="Durée du congé en jour"/>
                     </div>
 <br>
                     <div class="form-group mb-0">

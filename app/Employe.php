@@ -8,7 +8,7 @@ class Employe extends Model
 {
     protected $fillable = [
         'nom','prenom','telephone','sexe','datenaiss','dateentre','findecontrat',
-        'sm','nbenfant','statut','etude','salaire','lien','projet_id'
+        'sm','nbenfant','statut','etude','salaire','lien','projet_id','photo'
     ];
 
     public function projet()
@@ -17,5 +17,8 @@ class Employe extends Model
     }
     public function contrats(){
         return $this->hasMany(Contrat::class);
+    }
+    public function conges(){
+        return $this->hasMany(Conge::class);
     }
 }

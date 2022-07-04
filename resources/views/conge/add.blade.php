@@ -14,11 +14,11 @@
             <div class="btn-group float-right">
                 <ol class="breadcrumb hide-phone p-0 m-0">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('contrat.create') }}">contrat</a></li>
-                    <li class="breadcrumb-item active">Enregistrer contrat</li>
+                    <li class="breadcrumb-item"><a href="{{ route('conge.create') }}">Congé</a></li>
+                    <li class="breadcrumb-item active">Enregistrer un Congé</li>
                 </ol>
             </div>
-            <h4 class="page-title">Enregistrer contrat</h4>
+            <h4 class="page-title">Enregistrer un congé</h4>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -38,7 +38,7 @@
             @endif
 
 
-                <form class="" action="{{ route('contrat.store') }}" method="POST">
+                <form class="" action="{{ route('conge.store') }}" method="POST">
                     @csrf
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Poste</label>
@@ -53,7 +53,7 @@
                         <input type="date" name="datefin" class="form-control"  value="{{ old('datefin') }}"   placeholder="Saisir Date Fin"/>
                       </div>
                     <div class="form-group mb-0">
-                        <label class="mb-2 pb-1">Type de Contrat</label>
+                        <label class="mb-2 pb-1">Type de conge</label>
 
                             <select class="custom-select" name="type" required>
                                 <option value="" selected>Selectionner</option>

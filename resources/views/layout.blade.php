@@ -76,6 +76,13 @@
                                     <li><a href="{{ route('contrat.index') }}"">Lister</a></li>
                                 </ul>
                             </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers     "></i> <span> Type de congé </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('type-conge.create') }}">Ajouter</a></li>
+                                    <li><a href="{{ route('type-conge.index') }}"">Lister</a></li>
+                                </ul>
+                            </li>
                             <li>
                                 <a href="{{ route('register') }}" class="waves-effect">
                                     <i class="mdi mdi-account-multiple-plus"></i>

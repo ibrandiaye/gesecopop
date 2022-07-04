@@ -38,7 +38,7 @@
             @endif
 
 
-                <form class="" action="{{ route('employe.store') }}" method="POST">
+                <form class="" action="{{ route('employe.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Prenom</label>
@@ -116,6 +116,10 @@
                             @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Photo</label>
+                        <input type="file" name="image" ata-parsley-type="number"   class="form-control"   />
                     </div>
                     <div class="form-group mb-0">
                         <div>

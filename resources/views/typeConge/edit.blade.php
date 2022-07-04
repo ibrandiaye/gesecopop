@@ -13,12 +13,12 @@
         <div class="page-title-box">
             <div class="btn-group float-right">
                 <ol class="breadcrumb hide-phone p-0 m-0">
-                   <i class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('projet.create') }}">Type congé</a></li>
-                    <li class="breadcrumb-item active">Enregistrer Type congé</li>
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('type-conge.index') }}">Type de congé</a></li>
+                    <li class="breadcrumb-item active">Enregistrer typeConge</li>
                 </ol>
             </div>
-            <h4 class="page-title">Enregistrer Type congé</h4>
+            <h4 class="page-title">Modifier Type de congé</h4>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -38,13 +38,17 @@
             @endif
 
 
-                <form class="" action="{{ route('typeconge.store') }}" method="POST">
-                    @csrf
+            {!! Form::model($typeConge, ['method'=>'PATCH','route'=>['type-conge.update', $typeConge->id]]) !!}
+            @csrf
+
                     <div class="form-group mb-0">
-                        <label class="mb-2 pb-1">Nom projet</label>
-                        <input type="text" class="form-control" name="nomp" value="{{ old('nomp') }}" required placeholder="Type something"/>
+                        <label class="mb-2 pb-1">Type Congé</label>
+                        <input type="text" class="form-control" name="type" value="{{ $typeConge->type }}" required placeholder="Type something"/>
                     </div>
-<br>
+                    <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Durée de congé</label>
+                        <input type="number" class="form-control" name="nbj" value="{{ $typeConge->nbj}}" min="1" required placeholder="Durée du congé en jour"/> JOURS
+                    </div>
                     <div class="form-group mb-0">
                         <div>
                             <button type="submit" class="btn btn-primary waves-effect waves-light">
@@ -55,7 +59,7 @@
                             </button>
                         </div>
                     </div>
-                </form>
+                    {!! Form::close() !!}
 
             </div>
         </div>
@@ -65,7 +69,6 @@
 @section('script')
 <script src="{{ asset('assets/plugins/parsleyjs/parsley.min.js') }}"></script>
 <script src="{{ asset('assets/js/fr.js') }}"></script>
-
         <script type="text/javascript">
             $(document).ready(function() {
                 $('form').parsley();

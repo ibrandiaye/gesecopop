@@ -23,6 +23,7 @@ class EmployeController extends Controller
      */
     public function index()
     {
+
         $employes = $this->employeRepository->getEmployeWithRelation();
         $diff=0;
         foreach ($employes as $employe) {
@@ -33,6 +34,7 @@ class EmployeController extends Controller
             $employe->anciennete = floor($diff);
 
         }
+       // dd($employes);
         return view('employe.index',compact('employes','diff'));
     }
 
@@ -55,6 +57,11 @@ class EmployeController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->image){
+            $image = time().'.'.$request->image->extension();
+            $request->image->move('image/', $image);
+            $request->merge(['photo'=>$image]);
+        }
         $employes = $this->employeRepository->store($request->all());
         return redirect('employe');
 
@@ -94,6 +101,11 @@ class EmployeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($request->image){
+            $image = time().'.'.$request->image->extension();
+            $request->image->move('image/', $image);
+            $request->merge(['photo'=>$image]);
+        }
         $this->employeRepository->update($id, $request->all());
         return redirect('employe');
     }
