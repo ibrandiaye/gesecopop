@@ -20,6 +20,7 @@ Route::resource('projet', 'ProjetController')->middleware('auth');
 Route::resource('employe', 'EmployeController')->middleware('auth');
 Route::resource('contrat', 'ContratController')->middleware('auth');
 Route::resource('type-conge', 'TypeCongeController')->middleware('auth');
+Route::resource('conge', 'CongeController')->middleware('auth');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');

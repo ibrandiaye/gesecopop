@@ -14,8 +14,7 @@
             <div class="btn-group float-right">
                 <ol class="breadcrumb hide-phone p-0 m-0">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('contrat.index') }}">Projet</a></li>
-                    <li class="breadcrumb-item active">Enregistrer Projet</li>
+                    <li class="breadcrumb-item"><a href="{{ route('conge.index') }}">Projet</a></li>
                 </ol>
             </div>
             <h4 class="page-title">Enregistrer Projet</h4>
@@ -38,28 +37,25 @@
             @endif
 
 
-            {!! Form::model($contrat, ['method'=>'PATCH','route'=>['contrat.update', $contrat->id]]) !!}
+            {!! Form::model($conge, ['method'=>'PATCH','route'=>['conge.update', $conge->id]]) !!}
             @csrf
-            <div class="form-group mb-0">
-                <label class="mb-2 pb-1">Poste</label>
-                <input type="text" name="poste" class="form-control"  value="{{ $contrat->poste }}"   placeholder="Saisir le poste"/>
-              </div>
+
             <div class="form-group mb-0">
                 <label class="mb-2 pb-1">Date début</label>
-                <input type="date" name="datedebut" value="{{ $contrat->datedebut }}" class="form-control" required placeholder="Saisir Date début"/>
+                <input type="date" name="date_debut" value="{{ $conge->date_debut }}" class="form-control" required placeholder="Saisir Date début"/>
             </div>
             <div class="form-group mb-0">
                 <label class="mb-2 pb-1">Date Fin</label>
-                <input type="date" name="datefin" class="form-control"  value="{{ $contrat->datefin }}"  required placeholder="Saisir Date Fin"/>
+                <input type="date" name="date_fin" class="form-control"  value="{{ $conge->date_fin }}"  required placeholder="Saisir Date Fin"/>
               </div>
             <div class="form-group mb-0">
-                <label class="mb-2 pb-1">Type de Contrat</label>
+                <label class="mb-2 pb-1">Type de conge</label>
 
-                    <select class="custom-select" name="type" required>
+                    <select class="custom-select" name="type_conge_id" required>
                         <option value="" selected>Selectionner</option>
-                        <option value="Stage" {{old('type', $contrat->type) == 'Stage' ? 'selected' : ''}}>Stage</option>
-                        <option value="CDD" {{old('type', $contrat->type) == 'CDD' ? 'selected' : ''}}>CDD</option>
-                        <option value="CDI" {{old('type', $contrat->type) == 'CDI' ? 'selected' : ''}}>CDI</option>
+                        @foreach ($typeConges as $typeConge )
+                        <option value="{{ $typeConge->id }}" {{old('type_conge_id', $typeConge->id) == $conge->type_conge_id ? 'selected' : ''}}>{{ $typeConge->type }} </option>
+                        @endforeach
                     </select>
             </div>
             <div class="form-group mb-0">
@@ -68,7 +64,7 @@
                     <select class="custom-select" name="employe_id" required>
                         <option selected>Selectionner</option>
                     @foreach ($employes as $employe )
-                    <option value="{{ $employe->id }}" {{old('employe_id', $employe->id) == $contrat->employe_id ? 'selected' : ''}}>{{ $employe->prenom }} {{ $employe->nom }}</option>
+                    <option value="{{ $employe->id }}" {{old('employe_id', $employe->id) == $conge->employe_id ? 'selected' : ''}}>{{ $employe->prenom }} {{ $employe->nom }}</option>
                     @endforeach
                     </select>
                 </div>

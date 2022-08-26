@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contrat;
 use App\Repositories\EmployeRepository;
 use App\Repositories\ProjetRepository;
 use Illuminate\Http\Request;
@@ -62,7 +63,15 @@ class EmployeController extends Controller
             $request->image->move('image/', $image);
             $request->merge(['photo'=>$image]);
         }
-        $employes = $this->employeRepository->store($request->all());
+        $employe = $this->employeRepository->store($request->all());
+        $contrat = new Contrat();
+        $contrat->datedebut = $employe->dateentre;
+        $contrat->datefin = $employe->findecontrat;
+        $contrat->type = $employe->statut;
+        $contrat->employe_id = $employe->id;
+        $contrat->poste = $request['poste'];
+        $contrat->save();
+
         return redirect('employe');
 
     }

@@ -95,8 +95,8 @@
                 <input type="text" name="etude" ata-parsley-type="number" value="{{ $employe->etude }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
             </div>
             <div class="form-group mb-0">
-                <label class="mb-2 pb-1">Salaire</label>
-                <input type="text" name="salaire" ata-parsley-type="number" value="{{ $employe->salaire }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
+                <label class="mb-2 pb-1">Adresse</label>
+                <input type="text" name="adresse" ata-parsley-type="number" value="{{ $employe->adresse }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
             </div>
             <div class="form-group mb-0">
                 <label class="my-2 py-1">Lien du dossier du candidat</label>

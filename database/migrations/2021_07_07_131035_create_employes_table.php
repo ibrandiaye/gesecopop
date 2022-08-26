@@ -28,7 +28,7 @@ class CreateEmployesTable extends Migration
             $table->string('nbenfant')->nullable();
             $table->string('statut');
             $table->integer('etude');
-            $table->double('salaire');
+            $table->string('adresse');
             $table->text('lien');
             $table->unsignedBigInteger('projet_id');
             $table->foreign('projet_id')

@@ -39,7 +39,7 @@
                     <p>Situation matrimonial: {{ $employe->sm }}</p>
                     <p>Nombre d'enfant: {{  $employe->nbenfant }}</p>
                     <p>Nombre d'années d'étude: {{ $employe->etude }}</p>
-                    <p>Salaire: {{ $employe->salaire }}</p>
+                    <p>Adresse: {{ $employe->adresse }}</p>
                     <h6 class="font-14 mt-0">Contrats</h6>
                     @foreach ($employe->contrats as $contrat)
                         <p>Poste: {{ $contrat->poste }}</p>

@@ -74,6 +74,10 @@
                         <input type="date" name="findecontrat" value="{{ old('findecontrat') }}"   class="form-control"  required placeholder="Saisir date fin de contrat "/>
                     </div>
                     <div class="form-group mb-0">
+                        <label class="mb-2 pb-1">Poste</label>
+                        <input type="text" name="poste" class="form-control"  value="{{ old('poste') }}"   placeholder="Saisir le poste"/>
+                      </div>
+                    <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Situation matrimonial</label>
                         <input type="text" name="sm" value="{{ old('sm') }}"   class="form-control"  required placeholder="Saisir Situation matrimoniale"/>
                     </div>
@@ -96,8 +100,8 @@
                         <input type="number" name="etude" ata-parsley-type="number" value="{{ old('etude') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
                     </div>
                     <div class="form-group mb-0">
-                        <label class="mb-2 pb-1">Salaire</label>
-                        <input type="text" name="salaire" ata-parsley-type="number" value="{{ old('salaire') }}"  class="form-control"   required placeholder="Saisir Niveau d'étude"/>
+                        <label class="mb-2 pb-1">adresse</label>
+                        <input type="text" name="adresse" ata-parsley-type="text" value="{{ old('adresse') }}"  class="form-control"   required placeholder="Saisir Adresse"/>
                     </div>
                     <div class="form-group mb-0">
                         <label class="my-2 py-1">Lien du dossier du candidat</label>

@@ -36,32 +36,43 @@
                     </ul>
                 </div>
             @endif
-
+        @if ($message = Session::get('error'))
+        <div class="alert alert-danger">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
 
                 <form class="" action="{{ route('conge.store') }}" method="POST">
                     @csrf
-                    <div class="form-group mb-0">
-                        <label class="mb-2 pb-1">Poste</label>
-                        <input type="text" name="poste" class="form-control"  value="{{ old('poste') }}"   placeholder="Saisir le poste"/>
-                      </div>
+
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Date début</label>
-                        <input type="date" name="datedebut" value="{{ old('datedebut') }}" class="form-control" required placeholder="Saisir Date début"/>
+                        <input type="date" id="date_debut" name="date_debut" value="{{ old('date_debut') }}" class="form-control" required placeholder="Saisir Date début"/>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Durée</label>
+                            <input type="number" id="duree" class="form-control" value="{{ old('duree') }}" name="duree" placeholder="Durée" required>
+                        </div>
                     </div>
                     <div class="form-group mb-0">
                         <label class="mb-2 pb-1">Date Fin</label>
-                        <input type="date" name="datefin" class="form-control"  value="{{ old('datefin') }}"   placeholder="Saisir Date Fin"/>
+                        <input type="date" id="date_fin" name="date_fin" class="form-control"  value="{{ old('date_fin') }}"   placeholder="Saisir Date Fin"/>
                       </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Annee</label>
+                            <input type="number" id="annee" class="form-control" value="{{ old('annee') }}" name="annee" placeholder="Année" required>
+                        </div>
+                    </div>
                     <div class="form-group mb-0">
-                        <label class="mb-2 pb-1">Type de conge</label>
+                        <label class="mb-2 pb-1">Type de congé</label>
 
-                            <select class="custom-select" name="type" required>
+                            <select class="custom-select" name="type_conge_id" required>
                                 <option value="" selected>Selectionner</option>
-                                <option value="Stage">Stage</option>
-                                <option value="CDD">CDD</option>
-                                <option value="CDI">CDI</option>
-                                <option value="Consultant">Consultant</option>
-                                <option value="Prestation de service">Prestation de service</option>
+                                @foreach ($typeConges as $typeConge)
+                                    <option value="{{ $typeConge->id }}" {{ old('type_conge_id')==$typeConge->id ? 'selected' : '' }}>{{ $typeConge->type }}</option>
+                                @endforeach
                             </select>
                     </div>
                     <div class="form-group mb-0">
@@ -70,7 +81,7 @@
                             <select class="custom-select" name="employe_id" required>
                                 <option selected>Selectionner</option>
                             @foreach ($employes as $employe )
-                            <option value="{{ $employe->id }}">{{ $employe->prenom }} {{ $employe->nom }}</option>
+                            <option value="{{ $employe->id }}" {{ old('employe_id')==$employe->id ? 'selected' : '' }}>{{ $employe->prenom }} {{ $employe->nom }}</option>
                             @endforeach
                             </select>
                         </div>
@@ -95,10 +106,28 @@
 @section('script')
 <script src="{{ asset('assets/plugins/parsleyjs/parsley.min.js') }}"></script>
 <script src="{{ asset('assets/js/fr.js') }}"></script>
+<script src="{{ asset('assets/plugins/m/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/moment/moment.js') }}"></script>
+<!-- form-picker-custom Js -->
         <script type="text/javascript">
             $(document).ready(function() {
                 $('form').parsley();
             });
         </script>
 
+
+        <script>
+            $(document).ready(function () {
+
+                $("#duree").keyup(function(){
+
+                   var date = $("#date_debut").val();
+                   var new_date = moment(date).add( $("#duree").val(), 'days');
+                   $("#date_fin").val(new_date.format('YYYY-MM-DD'));
+                   moment(new_date, "MM-DD-YYYY");
+                   console.log(new_date);
+                   $("#annee").val(new_date.format('YYYY'));
+                  });
+            });
+        </script>
 @endsection

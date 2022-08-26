@@ -8,7 +8,7 @@ class Employe extends Model
 {
     protected $fillable = [
         'nom','prenom','telephone','sexe','datenaiss','dateentre','findecontrat',
-        'sm','nbenfant','statut','etude','salaire','lien','projet_id','photo'
+        'sm','nbenfant','statut','etude','adresse','lien','projet_id','photo'
     ];
 
     public function projet()

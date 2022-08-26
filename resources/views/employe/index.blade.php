@@ -42,7 +42,7 @@
                         <th>Nombre d'enfanté</th>
                         <th>Statut</th>
                         <th>Nombre d'années d'étude</th>
-                        <th>Salaire</th>
+                        <th>Adresse</th>
                         <th>Lien</th>
                         <th>ancienneté</th>
                         <th>Action</th>
@@ -63,7 +63,7 @@
                                 <td>{{ $employe->nbenfant }}</td>
                                 <td>{{ $employe->statut }}</td>
                                 <td>{{ $employe->etude }}</td>
-                                <td>{{ $employe->salaire }}</td>
+                                <td>{{ $employe->adresse }}</td>
 
                                 <td><a href="{{ $employe->lien }}">Dossier</a> </td>
                                 <td>{{-- $employe->anciennete --}} ans</td>

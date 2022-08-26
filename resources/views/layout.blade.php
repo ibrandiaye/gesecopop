@@ -51,7 +51,7 @@
                             <li>
                                 <a href="{{ route('home') }}" class="waves-effect">
                                     <i class="mdi mdi-airplay"></i>
-                                    <span> Tableau de bord <span class="badge badge-pill badge-primary float-right">7</span></span>
+                                      <span> Tableau de bord {{--<span class="badge badge-pill badge-primary float-right">7</span>--}}</span>
                                 </a>
                             </li>
 
@@ -76,11 +76,19 @@
                                     <li><a href="{{ route('contrat.index') }}"">Lister</a></li>
                                 </ul>
                             </li>
+
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers     "></i> <span> Type de congé </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('type-conge.create') }}">Ajouter</a></li>
                                     <li><a href="{{ route('type-conge.index') }}"">Lister</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-book-open"></i> <span> Conge </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('conge.create') }}">Ajouter</a></li>
+                                    <li><a href="{{ route('conge.index') }}"">Lister</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -285,9 +293,28 @@
         <script src="{{ asset('assets/js/jquery.blockUI.js') }}"></script>
         <script src="{{ asset('assets/js/waves.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+
+        <!-- Responsive examples -->
+        <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+        <script src=" {{ asset('assets/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/jszip.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/pdfmake.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/vfs_fonts.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/buttons.print.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/buttons.colVis.min.js') }}"></script>
+
+        {{--  <!-- Datatable init js -->
+        <script src="assets/pages/datatables.init.js"></script>  --}}
         @yield('script')
         <!-- App js -->
         <script src="{{ asset('assets/js/app.js') }}"></script>
-
+<script>
+        $(document).ready(function() {
+            $('#datatable2').DataTable();
+        } );
+    </script>
     </body>
 </html>

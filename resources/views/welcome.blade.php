@@ -102,7 +102,7 @@
 
                 <div class="table-rep-plugin">
                     <div class="table-responsive b-0" data-pattern="priority-columns">
-                <table id="tech-companies-1"  class="table table-bordered">
+                <table id="datatable"  class="table table-bordered">
                     <thead>
                     <tr>
                         <th>id</th>
@@ -111,12 +111,13 @@
                         <th>sexe</th>
                         <th>Date de Naissance</th>
                         <th>Date d'entrée</th>
-                        <th>Date fin de contrat</th>
+                        <th>Début contrat</th>
+                        <th>Fin contrat</th>
                         <th>Situation matrimonial</th>
                         <th>Nombre d'enfanté</th>
                         <th>Statut</th>
                         <th>Nombre d'années d'étude</th>
-                        <th>Salaire</th>
+                        <th>Adresse</th>
                         <th>Lien</th>
                         <th>ancienneté</th>
                         <th>Action</th>
@@ -131,13 +132,17 @@
                                 <td>{{ $employe->nom }}</td>
                                 <td>{{ $employe->sexe }}</td>
                                 <td>{{ Carbon\Carbon::parse($employe->datenaiss)->format('d-m-Y')   }}</td>
+                                <td>{{ Carbon\Carbon::parse($employe->datedebut)->format('d-m-Y') }}</td>
                                 <td>{{ Carbon\Carbon::parse($employe->dateentre)->format('d-m-Y') }}</td>
-                                <td>{{ Carbon\Carbon::parse($employe->findecontrat)->format('d-m-Y')   }}</td>
+                                <td style="color: {{ $employe->restant < 45  ? 'red' : '' }}">{{ Carbon\Carbon::parse($employe->findecontrat)->format('d-m-Y')   }}
+
+                                  {{--    {{ $employe->restant}} jours  --}}
+                                </td>
                                 <td>{{ $employe->sm }}</td>
                                 <td>{{ $employe->nbenfant }}</td>
                                 <td>{{ $employe->statut }}</td>
                                 <td>{{ $employe->etude }}</td>
-                                <td>{{ $employe->salaire }}</td>
+                                <td>{{ $employe->adresse }}</td>
 
                                 <td><a href="{{ $employe->lien }}">Dossier</a> </td>
                                 <td>{{ $employe->anciennete }} ans</td>

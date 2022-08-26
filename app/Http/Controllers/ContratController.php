@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Employe;
 use App\Repositories\ContratRepository;
 use App\Repositories\EmployeRepository;
 use Illuminate\Http\Request;
@@ -47,7 +48,8 @@ class ContratController extends Controller
      */
     public function store(Request $request)
     {
-        $contrats = $this->contratRepository->store($request->all());
+        $contrat = $this->contratRepository->store($request->all());
+        Employe::find($contrat->employe_id)->update(['findecontrat' =>  $contrat->datefin,'statut'=>$contrat->type]);
         return redirect('contrat');
 
     }
